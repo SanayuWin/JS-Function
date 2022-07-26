@@ -109,7 +109,7 @@ function nextbox(e, row, befor, after) {
 	}
 }	
 	
-function autocomplete(inp) {
+function autocomplete(inp, tempurl) {
 	
   /*the autocomplete function takes two arguments,
   the text field element and an array of possible autocompleted values:*/
@@ -130,7 +130,7 @@ function autocomplete(inp) {
 	  
 	  var dataSet = {'searchTerm':val}
 		$.ajax({
-			url : "page_master/Master/GetData.php",
+			url : "page_master/Master/"+tempurl,
 			type: "POST",
 			data: dataSet,
 			dataType: 'json',
@@ -219,5 +219,5 @@ function autocomplete(inp) {
       closeAllLists(e.target);
   });
 }
-autocomplete(document.getElementById("datainput"));
+autocomplete(document.getElementById("datainput"), 'GetData.php');
 ```
