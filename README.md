@@ -3,7 +3,7 @@
 
 
 
-Function เรียกคีย์บอร์ด 
+Function Get keyboard values
 ```html
 
 <input id="" name="" class="" onkeydown="return nextbox(event);" />
@@ -20,7 +20,7 @@ function nextbox(e) {
 }
 ```
 
-Function ล็อคให้กรอกได้เฉพาะตัวเลข
+Function Locked to fill in only numbers.
 ```html
 
 <input id="" name="" class="" OnKeyPress="return chkNumber(this)" />
