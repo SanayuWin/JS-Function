@@ -74,14 +74,41 @@ Input Select AutoComplete
 <b>HTML</b>
 ```html
   <div class="autocomplete" >
-      <input id="datainput"  class="" type="text"  placeholder="..." autocomplete="off" >
+      <input id="datainput"  class="" type="text"  placeholder="..." autocomplete="off" onkeydown="return nextbox(event, 'row','before', 'after' >
   </div>
 ```
 
 <b>JS</b>
 ``` JS
 
+function nextbox(e, row, befor, after) {
+    var keycode = e.which || e.keyCode;
+	if (keycode == 13  &&  $('.autocomplete-items').is(':visible')==false) {
+		document.getElementById(after).focus();
+		document.getElementById(after).setSelectionRange(0, document.getElementById(after).value.length);
+		return false;
+	}
+	if (keycode == 39  &&  $('.autocomplete-items').is(':visible')==false) {
+		document.getElementById(after).focus();
+		document.getElementById(after).setSelectionRange(0, document.getElementById(after).value.length);
+		return false;
+	}
+	if (keycode == 40  &&  $('.autocomplete-items').is(':visible')==false) {
+		document.getElementById(after).focus();
+		document.getElementById(after).setSelectionRange(0, document.getElementById(after).value.length);
+		return false;
+	}
 
+	if (keycode == 37 &&  $('.autocomplete-items').is(':visible')==false) {
+		document.getElementById(befor).select();
+		return false;
+	}
+	if (keycode == 38 &&  $('.autocomplete-items').is(':visible')==false) {
+		document.getElementById(befor).select();
+		return false;
+	}
+}	
+	
 function autocomplete(inp) {
 	
   /*the autocomplete function takes two arguments,
