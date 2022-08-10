@@ -74,37 +74,37 @@ Input Select AutoComplete
 <b>HTML</b>
 ```html
   <div class="autocomplete" >
-      <input id="datainput"  class="" type="text"  placeholder="..." autocomplete="off" onkeydown="return nextbox(event, 'row','before', 'after' >
+      <input id="datainput"  class="" type="text"  placeholder="..." autocomplete="off" onkeydown="return nextbox(event, 'row','left', 'right', 'up', 'down' >
   </div>
 ```
 
 <b>JS</b>
 ``` JS
 
-function nextbox(e, row, befor, after) {
+function nextbox(e, row, left, right, up, down) {
     var keycode = e.which || e.keyCode;
 	if (keycode == 13  &&  $('.autocomplete-items').is(':visible')==false) {
-		document.getElementById(after).focus();
-		document.getElementById(after).setSelectionRange(0, document.getElementById(after).value.length);
+		document.getElementById(right).focus();
+		document.getElementById(right).setSelectionRange(0, document.getElementById(right).value.length);
 		return false;
 	}
 	if (keycode == 39  &&  $('.autocomplete-items').is(':visible')==false) {
-		document.getElementById(after).focus();
-		document.getElementById(after).setSelectionRange(0, document.getElementById(after).value.length);
+		document.getElementById(right).focus();
+		document.getElementById(right).setSelectionRange(0, document.getElementById(right).value.length);
 		return false;
 	}
 	if (keycode == 40  &&  $('.autocomplete-items').is(':visible')==false) {
-		document.getElementById(after).focus();
-		document.getElementById(after).setSelectionRange(0, document.getElementById(after).value.length);
+		document.getElementById(down).focus();
+		document.getElementById(down).setSelectionRange(0, document.getElementById(down).value.length);
 		return false;
 	}
 
 	if (keycode == 37 &&  $('.autocomplete-items').is(':visible')==false) {
-		document.getElementById(befor).select();
+		document.getElementById(left).select();
 		return false;
 	}
 	if (keycode == 38 &&  $('.autocomplete-items').is(':visible')==false) {
-		document.getElementById(befor).select();
+		document.getElementById(up).select();
 		return false;
 	}
 }	
