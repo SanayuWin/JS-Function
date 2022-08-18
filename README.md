@@ -74,7 +74,7 @@ Input Select AutoComplete
 <b>HTML</b>
 ```html
   <div class="autocomplete" >
-      <input id="datainput"  class="" type="text"  placeholder="..." autocomplete="off" onkeydown="return nextbox(event, 'row','left', 'right', 'up', 'down' >
+      <input id="datainput"  class="" type="text"  placeholder="..." autocomplete="off" onkeydown="return nextbox(event, 'row','left', 'right', 'up', 'down')" >
   </div>
 ```
 
