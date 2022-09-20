@@ -239,7 +239,7 @@ autocomplete(document.getElementById("datainput"), 'GetData.php');
 
 
 Function Set Format Float onblur
-<b>HTML</b>
+<br /><b>HTML</b>
 ```html
 onblur="JStodis(this,2);"
 ```
@@ -282,5 +282,24 @@ function JStodis(number,dec_num) {
 	}
 	if(plus==0) num_return=("-"+num_return);
 	if(isobj==1) elm.value=num_return; else	return num_return;
+}
+```
+
+Function Clear Format Float onfocus
+<br /> <b>HTML</b>
+```html
+onfocus="JStonum(this);"
+```
+
+<b>JS</b>
+``` JS
+function JStonum (ref){ 
+	if ( Number(ref.value) == 0 ) {  
+		ref.value='';  
+	}  else {
+		re = /,/gi;
+		ref.value=ref.value.replace(re,'');	
+		ref.value=Number(ref.value);
+	}
 }
 ```
