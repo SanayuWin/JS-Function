@@ -236,3 +236,51 @@ function autocomplete(inp, tempurl) {
 }
 autocomplete(document.getElementById("datainput"), 'GetData.php');
 ```
+
+
+Function Set Format Float onblur
+<b>HTML</b>
+```html
+onblur="JStodis(this,2);"
+```
+
+<b>JS</b>
+``` JS
+function JStodis(number,dec_num) {
+	re = /,/gi;
+	var elm=number;
+	var isobj=0;
+	if((typeof number == "object")){isobj=1;number=number.value; }
+	number=number.toString().replace(re,'');	
+	//number=number.replace(re,'');	
+	var profits=Number(number);
+	var plus=1;
+	if(profits < 0) {profits=(profits*-1);plus=0;}
+	dec_num=Number(dec_num);
+	var num_return;
+	if(!isNaN(profits)){ 
+		var number=profits.toFixed(dec_num);
+		var dec=number.substring((number.indexOf('.')+1),(number.indexOf('.')+1)+dec_num);
+		var number=(number.indexOf('.') < 0)? number : number.substring(0,number.indexOf('.'));
+		number = '' + number;
+		if (number.length > 3) {
+			var mod = number.length % 3;
+			var output = (mod > 0 ? (number.substring(0,mod)) : '');
+			for (i=0 ; i < Math.floor(number.length / 3); i++) {
+				if ((mod == 0) && (i == 0))
+					output += number.substring(mod+ 3 * i, mod + 3 * i + 3);
+				else
+					output+= ',' + number.substring(mod + 3 * i, mod + 3 * i + 3);
+			}
+			num_return=(dec=="" )? output : (output+"."+dec);
+		}else{ 
+			num_return=(dec=="" )? number : (number+"."+dec); 
+		}
+	}else{
+		var profits=0;
+		num_return=profits.toFixed(dec_num);
+	}
+	if(plus==0) num_return=("-"+num_return);
+	if(isobj==1) elm.value=num_return; else	return num_return;
+}
+```
