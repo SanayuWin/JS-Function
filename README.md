@@ -87,27 +87,29 @@ Input Select AutoComplete
 function nextbox(e, row, left, right, up, down) {
     var keycode = e.which || e.keyCode;
 	if (keycode == 13  &&  $('.autocomplete-items').is(':visible')==false) {
-		document.getElementById(right).focus();
+		document.getElementById(right).select();
 		document.getElementById(right).setSelectionRange(0, document.getElementById(right).value.length);
 		return false;
 	}
 	if (keycode == 39  &&  $('.autocomplete-items').is(':visible')==false) {
-		document.getElementById(right).focus();
+		document.getElementById(right).select();
 		document.getElementById(right).setSelectionRange(0, document.getElementById(right).value.length);
 		return false;
 	}
 	if (keycode == 40  &&  $('.autocomplete-items').is(':visible')==false) {
-		document.getElementById(down).focus();
+		document.getElementById(down).select();
 		document.getElementById(down).setSelectionRange(0, document.getElementById(down).value.length);
 		return false;
 	}
 
 	if (keycode == 37 &&  $('.autocomplete-items').is(':visible')==false) {
 		document.getElementById(left).select();
+		document.getElementById(left).setSelectionRange(0, document.getElementById(left).value.length);
 		return false;
 	}
 	if (keycode == 38 &&  $('.autocomplete-items').is(':visible')==false) {
 		document.getElementById(up).select();
+		document.getElementById(up).setSelectionRange(0, document.getElementById(up).value.length);
 		return false;
 	}
 }	
