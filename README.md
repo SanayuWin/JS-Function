@@ -92,6 +92,7 @@ function nextbox(e, row, left, right, up, down) {
 		return false;
 	}
 	if (keycode == 39  &&  $('.autocomplete-items').is(':visible')==false) {
+		document.getElementById(right).focus();
 		document.getElementById(right).select();
 		document.getElementById(right).setSelectionRange(0, document.getElementById(right).value.length);
 		return false;
@@ -103,6 +104,7 @@ function nextbox(e, row, left, right, up, down) {
 	}
 
 	if (keycode == 37 &&  $('.autocomplete-items').is(':visible')==false) {
+		document.getElementById(left).focus();
 		document.getElementById(left).select();
 		document.getElementById(left).setSelectionRange(0, document.getElementById(left).value.length);
 		return false;
