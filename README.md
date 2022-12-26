@@ -143,10 +143,12 @@ function autocomplete(inp, tempurl) {
 			dataType: 'json',
 			success:function(result){
 				var arr = result;
+				var rowfocus = 0;
 				for (i = 0; i < arr.length; i++) {
 					
 				/*check if the item starts with the same letters as the text field value:*/
 				if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+				  rowfocus++;
 				  /*create a DIV element for each matching element:*/
 				  b = document.createElement("DIV");
 				  /*make the matching letters bold:*/
@@ -163,6 +165,13 @@ function autocomplete(inp, tempurl) {
 					  closeAllLists();
 				  });
 				  a.appendChild(b);
+				  if(rowfocus == 1){
+					  var x = a;
+					  if (x) x = x.getElementsByTagName("div");
+					  var z = a;
+					  currentFocus ++;
+					  addActive(x,z);
+				  }
 				}
 			  }
 			}
