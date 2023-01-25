@@ -84,7 +84,7 @@ Input Select AutoComplete
 <b>JS</b>
 ``` JS
 
-function nextbox(e, row, left, right, up, down) {
+function nextboxInput(e, row, left, right, up, down) {
     var keycode = e.which || e.keyCode;
 	if (keycode == 13  &&  $('.autocomplete-items').is(':visible')==false) {
 		document.getElementById(right).select();
@@ -116,7 +116,7 @@ function nextbox(e, row, left, right, up, down) {
 	}
 }	
 	
-function autocomplete(inp, tempurl) {
+function autocompleteInput(inp, tempurl) {
 	
   /*the autocomplete function takes two arguments,
   the text field element and an array of possible autocompleted values:*/
