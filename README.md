@@ -363,7 +363,7 @@ function autocompleteInput(inp, tempurl) {
       closeAllLists(e.target);
   });
 }
-autocomplete(document.getElementById("datainput"), 'GetData.php');
+autocompleteInput(document.getElementById("datainput"), 'GetData.php');
 ```
 
 
