@@ -82,7 +82,7 @@ Input Select AutoComplete
 ```
 
 <b>JS</b>
-``` JS
+``` JS 
 
 function nextboxInput(e, row, left, right, up, down) {
     var keycode = e.which || e.keyCode;
