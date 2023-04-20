@@ -33,6 +33,26 @@ function chkNumber(ele){
 }
 ```
 
+Input Time 
+```html
+<script src="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
+<link href="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css" rel="stylesheet"/>
+<input type="text" value=""  OnKeyPress="return chkNumber(this)" />
+```
+
+``` JS
+var timepicker = new TimePicker('close_time', {
+  lang: 'en',
+  theme: 'dark'
+});
+timepicker.on('change', function(evt) {
+
+  var value = (evt.hour || '00') + ':' + (evt.minute || '00');
+  evt.element.value = value;
+
+});
+```
+
 
 Input Select AutoComplete
 </br> <b>CSS</b>
